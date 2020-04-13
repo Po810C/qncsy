@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="青柠起始页,开始,起始页,主页,导航" />
+    <meta name="description" content="由233开发、一个简洁美观实用的浏览器起始页。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; base-uri 'none'; connect-src https:; font-src https://at.alicdn.com https://cdn.sencdn.com; form-action https://*.baidu.com https://www.bing.com https://www.google.com; frame-src 'self' https://account.rthsoftware.cn; img-src https://cdn.jsdelivr.net 'self' data: https:; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net https://cdn.sencdn.com https://widget.seniverse.com; style-src 'self' 'unsafe-inline'; media-src https://cdn.jsdelivr.net 'self'">
+    <title>青柠起始页</title>
+    <link rel="stylesheet" href="styles/waves.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="canonical" href="index.html">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+</head>
+
+<body>
+    <div id="bodyBox">
+        <form id="form0" target="_blank">
+            <video id="liveBgBox" autoplay="true" loop="true" muted="true"></video>
+            <input type="text" class="input ypoctonod" id="input0" name="word" size="30" placeholder="Search"
+                autocomplete="off">
+            <img class="bgbox" id="bgbox">
+            <div class="cover" id="cover" onclick="Input_Blur()"></div>
+            <input type="submit" class="btn_search" value="Search">
+        </form>
+        <div id="searchOptBox">
+            <span class="searchOpt" id="searchOpt1" onclick="switchSearchEng('baidu')"><i class="iconfont"
+                    id="iconBaidu">&#xe651;</i></span><span class="searchOpt" id="searchOpt2"
+                onclick="switchSearchEng('bing')"><i class="iconfont" id="iconBing">&#xe608;</i></span><span
+                class="searchOpt" id="searchOpt3" onclick="switchSearchEng('google')"><i class="iconfont"
+                    id="iconGoogle">&#xe624;</i></span>
+        </div>
+        <div class="keyword" id="keyword"></div>
+        <div id="menuSearch">
+            <div class="searchMenuItem disabled" id="searchMenuCut"><i class="iconfont" id="iconCut">&#xe74b;</i>剪切
+            </div>
+            <div class="searchMenuItem disabled" id="searchMenuCopy"><i class="iconfont" id="iconCut">&#xe7e4;</i>复制
+            </div>
+            <div class="searchMenuItem" id="searchMenuPaste"><i class="iconfont" id="iconCut">&#xe753;</i>粘贴</div>
+        </div>
+        <div id="tipBoxCopyPaste">
+            <div class="pTitle">如何复制粘贴文本？</div>
+            <div class="pTitleS">您所使用的浏览器不支持我们的右键菜单访问剪贴板。<br>但您仍可通过以下快捷键进行剪切、复制和粘贴。</div>
+            <div class="shortcutBox">
+                <p>Ctrl+X</p><span>剪切</span>
+            </div>
+            <div class="shortcutBox">
+                <p>Ctrl+C</p><span>复制</span>
+            </div>
+            <div class="shortcutBox">
+                <p>Ctrl+V</p><span>粘贴</span>
+            </div>
+        </div>
+        <div class="quotebox waves-effect waves-light" id="quotebox">
+            <span class="quote-bg"></span>
+            <p class="quote-content"></p>
+            <p class="quote-author"></p>
+        </div>
+        <div class="navbox" id="navbox">
+            <div class="navbox0" id="navbox0">
+                <div class="navboxes" id="navbox1">
+                    <div class="navLinkBox" id="navLinkBox">
+                        <span class="navLinkBoxItem"><a href="https://fanyi.baidu.com/" target="_blank"
+                                class="nav_links" id="navlinkTranslate"><i
+                                    class="iconfont iconNavLinks">&#xe8f6;</i>翻译</a></span>
+                        <span class="navLinkBoxItem"><a href="https://map.baidu.com/" target="_blank" class="nav_links"
+                                id="navlinkMap"><i class="iconfont iconNavLinks">&#xe7e1;</i>地图</a></span>
+                        <span class="navLinkBoxItem"><a href="https://image.baidu.com/" target="_blank"
+                                class="nav_links" id="navlinkImage"><i
+                                    class="iconfont iconNavLinks">&#xe7ac;</i>图片</a></span>
+                        <span class="navLinkBoxItem"><a href="https://mail.qq.com/" target="_blank" class="nav_links"><i
+                                    class="iconfont iconNavLinks">&#xe712;</i>QQ邮箱</a></span>
+                        <span class="navLinkBoxItem"><a href="https://email.163.com/" target="_blank"
+                                class="nav_links"><i class="iconfont iconNavLinks">&#xe712;</i>网易邮箱</a></span>
+                        <span class="navLinkBoxItem"><a href="https://github.com/" target="_blank" class="nav_links"><i
+                                    class="iconfont iconNavLinks">&#xe780;</i>GitHub</a></span>
+                        <span class="navLinkBoxItem"><a href="https://tieba.baidu.com/" target="_blank"
+                                class="nav_links"><i class="iconfont iconNavLinks">&#xe774;</i>贴吧</a></span>
+                        <span class="navLinkBoxItem"><a href="https://www.bilibili.com/" target="_blank"
+                                class="nav_links"><i class="iconfont iconNavLinks">&#xe948;</i>Bilibili</a></span>
+                        <span class="navLinkBoxItem"><a href="https://www.youku.com/" target="_blank"
+                                class="nav_links"><i class="iconfont iconNavLinks">&#xe948;</i>优酷</a></span>
+                        <span class="navLinkBoxItem"><a href="https://music.163.com/" target="_blank"
+                                class="nav_links"><i class="iconfont iconNavLinks">&#xe804;</i>云音乐</a></span>
+                        <span class="navLinkBoxItem"><a href="https://www.jd.com/" target="_blank" class="nav_links"><i
+                                    class="iconfont iconNavLinks">&#xe89d;</i>京东</a></span>
+                        <span class="navLinkBoxItem"><a href="https://www.taobao.com/" target="_blank"
+                                class="nav_links"><i class="iconfont iconNavLinks">&#xe89d;</i>淘宝</a></span>
+                        <span class="navLinkBoxItem"><a href="https://www.tmall.com/" target="_blank"
+                                class="nav_links"><i class="iconfont iconNavLinks">&#xe89d;</i>天猫</a></span>
+                        <span class="navLinkBoxItem"><a href="https://airportal.cn/" target="_blank"
+                                class="nav_links"><i class="iconfont iconNavLinks">&#xe6b9;</i>空投</a></span>
+                        <span class="navLinkBoxItem"><a href="https://pan.baidu.com/" target="_blank"
+                                class="nav_links"><i class="iconfont iconNavLinks">&#xe6b9;</i>网盘</a></span>
+                    </div>
+                </div>
+                <div class="navboxes" id="navbox2">
+                    <div class="shouldNotFade" id="noteListWrap">
+                        <div class="shouldNotFade" id="noteList">
+                            <div class="noteItem shouldNotFade" @click="newNote()">
+                                <i class="iconfont shouldNotFade" id="iconAdd">&#xe620;</i><span
+                                    class="noteTitle shouldNotFade" id="noteTitle0">新便笺</span>
+                            </div>
+                            <div v-for="(item,index) in list.text"
+                                v-bind:class="{noteItem:1,shouldNotFade:1,current:current===index+1}"
+                                @click="open(index+1)">
+                                <span class="noteTitle shouldNotFade">{{item.text}}</span><br>
+                                <span class="noteTime shouldNotFade">{{item.time}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <textarea class="shouldNotFade" id="textNote" placeholder="在此键入以创建新的便笺"></textarea>
+                    <div class="shouldNotFade" id="noteToolBar">
+                        <div class="toolBarBtns" id="btnDelNote" title="删除便笺"><i
+                                class="iconfont shouldNotFade">&#xe614;</i></div>
+                        <div class="toolBarBtns" id="btnPinNote" title="固定便笺到主屏幕"><i class="iconfont shouldNotFade"
+                                id="iconPin">&#xe849;</i></div>
+                        <div class="toolBarBtns" id="btnSaveNote" title="保存便笺 (Ctrl+S)"><i
+                                class="iconfont shouldNotFade" id="iconSave">&#xe996;</i></div>
+                        <div class="toolBarTip" id="tipNoteCloud"><span
+                                id="txtNoteCloudStatus">便笺云同步由热铁盒工具箱提供技术支持</span><i class="iconfont"
+                                id="iconNoteCloud">&#xeabf;</i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="navboxSwitch">
+
+                <span class="nbSwitch shouldNotFade" id="nbSwitch1"><span class="shouldNotFade current"
+                        id="nbSwitch1_0"></span></span>
+                <span class="nbSwitch shouldNotFade" id="nbSwitch2"><span class="shouldNotFade"
+                        id="nbSwitch2_0"></span></span>
+            </div>
+            <div id="navboxCustom">
+            </div>
+            <div class="shouldNotFade" id="frmSetCustomNav">
+                <div class="popCaptionS shouldNotFade" id="captionSetCusNav">添加网站捷径</div>
+                <span class="btnCloseS shouldNotFade" id="btnCloseFrmCusNav"></span>
+                <input class="inputCustom shouldNotFade" id="inputCustomUrl" placeholder="网址">
+                <input class="inputCustom shouldNotFade" id="inputCustomTitle" placeholder="标题 - 留空即自动获取">
+                <div class="btnCustom shouldNotFade" id="btnAddCusNav">添加</div>
+            </div>
+            <div id="menuCusNav">
+                <div class="userMenuItem shouldNotFade" id="cusNavMenuEdit"><i class="iconfont shouldNotFade"
+                        id="iconEdit2">&#xeb93;</i>编辑</div>
+                <div class="userMenuItem shouldNotFade" id="cusNavMenuDel"><i class="iconfont shouldNotFade"
+                        id="iconDel">&#xeb95;</i>删除</div>
+            </div>
+        </div>
+        <div class="title" id="title">
+            <h1 id="titleText">开始</h1>
+        </div>
+        <span id="btnWarn"><i class="iconfont">&#xe6e1;</i></span>
+        <span id="btnUser" title="用户"><i class="iconfont">&#xe607;</i><span id="offlineMark"></span></span>
+        <span id="btnSettings" title="设置" onclick="btnSettingsClick()"><i class="iconfont">&#xe673;</i></span>
+        <div id="tipBoxBrowser">
+            <div class="titleBold">您的浏览器内核版本较低</div>
+            <div class="pTip">起始页的部分功能及UI特性只有新一代浏览器内核才能完美运行及渲染。</div>
+            <div class="pTip">建议您更换至最新的<a href="https://www.google.cn/chrome/" target="_blank" class="links1"> Google
+                    Chrome 浏览器 </a>或全新<a href="https://www.microsoft.com/zh-cn/edge/" target="_blank" class="links1">
+                    Chromium 版 Microsoft Edge 浏览器 </a></div>
+        </div>
+        <div id="tipBoxLogin">
+            <i class="iconfont" id="iconOffline">&#xe621;</i>
+            <div class="titleBold">您尚未登录</div>
+            <div class="pTip">登录后，即可云端同步便笺和自定义网站捷径</div>
+        </div>
+        <div id="menuUser">
+            <div class="userMenuItem" id="userMenuMyAccount" onclick="showPop(popAccount)"><span
+                    id="menuTextUsername">User</span>账号管理</div>
+            <div class="userMenuItem" id="userMenuLogout" onclick="logOut()">退出登录</div>
+        </div>
+        <div id="menuSettings">
+            <div class="userMenuItem" id="setMenuGeneral" onclick="showPop(popGeneralSettings)">常规设置</div>
+            <div class="userMenuItem" id="setMenuBgPref" onclick="showPop(popBg)">背景图像偏好</div>
+            <div class="userMenuItem" id="setMenuDonate" onclick="showPop(popDonate)">捐助我</div>
+            <div class="userMenuItem" id="setMenuFeedback" onclick="showPop(popFeedback)">反馈</div>
+        </div>
+        <span id="btnLike" onclick="likeClick()" onmouseenter="showMenu(wallpaperInfo)"
+            onmouseleave="hideMenu(wallpaperInfo)"><i class="iconfont">&#xe64f;</i>&nbsp;<span
+                id="numLiked">ZRY</span></span>
+        <div id="wallpaperInfo"></div>
+        <div id="pinnedBox">
+
+        </div>
+        <div id="greetingBox"><span id="greeting">欢迎回来~</span></div>
+        <footer>
+            <span id="footerBox"><a href="" title="" target="_blank"
+                    class="links">&copy; </a> 丨 <a title="关于「青柠起始页」" class="links"
+                    onclick="showAbout()">关于</a></span>
+        </footer>
+        <div class="cover1" id="cover1">
+            <div class="popUp" id="popLogin">
+                <span class="btnClose" onclick="closePop(popLogin)"><span class="btnCloseInner"></span></span>
+            </div>
+            <div class="popUp" id="popCompleteReg">
+                <span class="btnClose" onclick="closePop(popCompleteReg)"><span class="btnCloseInner"></span></span>
+                <div class="pTitle centerAligned" id="pTitleCompleteReg">马上就好...</div>
+                <div id="loginTip">完成最后一步设置，您即可开始网上冲浪</div>
+                <div class="loginTip3" id="loginTipUsername" style="margin-top: 20px">为自己起一个好听的用户名</div>
+                <input type="text" name="username" class="inputLogin" id="inputUsername" onkeyup="checkUsername()">
+                <div class="loginTip3" style="margin-top: 60px">你的生日</div>
+                <input type="date" name="password" class="inputLogin" id="inputBirthday">
+                <button class="btnLogin" id="btnCompleteReg">完成</button>
+            </div>
+            <div class="popUp" id="popGeneralSettings">
+                <span class="btnClose" onclick="closePop(popGeneralSettings)"><span class="btnCloseInner"></span></span>
+                <div class="pTitle">常规设置</div>
+                <div class="pContent" id="contentGSet">
+                    <div class="titleBold setGroupCaption">搜索</div>
+                    <div class="setGroup">
+                        <div class="setOptBox">
+                            <span class="setOptCaption">自动清空搜索栏</span>
+                            <label class="switch"><input type="checkbox" id="chkAutoClrSearchBar">
+                                <div class="slider" onclick="setAutoClrSearchBar()"></div>
+                            </label>
+                        </div>
+                        <div class="setOptBox">
+                            <span class="setOptCaption">在新标签页显示搜索结果</span>
+                            <label class="switch"><input type="checkbox" id="chkOpenInNew">
+                                <div class="slider" onclick="setOpenInNew()"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="titleBold setGroupCaption">初始化</div>
+                    <div class="setGroup">
+                        <div class="setOptBox">
+                            <span class="setOptCaption">起始页加载时自动聚焦到搜索栏</span>
+                            <label class="switch"><input type="checkbox" id="chkAutoFocus">
+                                <div class="slider" onclick="setAutoFocus()"></div>
+                            </label>
+                        </div>
+                        <div class="setOptBox">
+                            <span class="setOptCaption">将便笺页作为默认的二级页面</span>
+                            <label class="switch"><input type="checkbox" id="chkNoteAsDefault">
+                                <div class="slider" onclick="setNoteAsDefault()"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="titleBold setGroupCaption">视效和性能</div>
+                    <div class="setGroup">
+                        <div class="setOptBox">
+                            <span class="setOptCaption">减弱动态效果</span>
+                            <label class="switch"><input type="checkbox" id="chkReduceMotion">
+                                <div class="slider" onclick="setReduceMotion()"></div>
+                            </label>
+                            <span class="setOptComment">动效显示不流畅或影响你的鼠标操作时，可以开启此项。</span>
+                        </div>
+                        <div class="setOptBox">
+                            <span class="setOptCaption">为网站捷径栏应用毛玻璃效果</span>
+                            <label class="switch"><input type="checkbox" id="chkNavLinksBlurEf">
+                                <div class="slider" onclick="setNavLinksBlurEf()"></div>
+                            </label>
+                            <span class="setOptComment">关闭此项可提升性能。</span>
+                        </div>
+                    </div>
+                    <div class="titleBold setGroupCaption">通用</div>
+                    <div class="setGroup">
+                        <div class="setOptBox">
+                            <span class="setOptCaption" style="margin-left: -6px;">「一言」功能</span>
+                            <label class="switch"><input type="checkbox" id="chkHitokoto">
+                                <div class="slider" onclick="setHitokoto()"></div>
+                            </label>
+                        </div>
+                        <div class="setOptBox">
+                            <span class="setOptCaption">自动切换深色主题</span>
+                            <label class="switch"><input type="checkbox" id="chkAutoDarkMode">
+                                <div class="slider" onclick="setAutoDarkMode()"></div>
+                            </label>
+                            <span class="setOptComment">开启后，若浏览器或操作系统的深色模式开启，起始页也会切换到深色主题。</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="popUp" id="popBg">
+                <span class="btnClose" onclick="closePop(popBg)"><span class="btnCloseInner"></span></span>
+                <div class="pTitle">背景图像偏好</div>
+                <div class="pContent" id="contentBg">
+                    <div class="pTitleS">自定义</div>
+                    <div class="bgPreviewBox" id="bgPreBoxCus" onclick="changeWp(this)">
+                        <div class="bgPreBoxInner unset" id="bgPreBoxInCus"><span class="bgPreBoxMask"></span><i
+                                class="iconfont iconCheck shouldNotFade">&#xe622;</i><i
+                                class="iconfont iconImg shouldNotFade">&#xeb9a;</i></div>
+                    </div>
+                    <div class="bgCusBoxR">
+                        <span class="titleBold">将您喜爱的任意图像设为壁纸。</span>
+                        <div class="pTitleS" id="pCusBgSuggestion">建议图像尺寸：1920×1080 或更高</div><br>
+                        <button class="btnRectangle" id="btnBrowse">浏览...</button>
+                        <input id="inputImg" type="file" accept="image/*">
+                    </div>
+                    <div class="pTitleS">默认</div>
+                    <div class="bgPreviewBox" id="bgPreBoxD1" onclick="changeWp(this)"
+                        title="东库特尼的埃尔克河，加拿大不列颠哥伦比亚省 (© Carson Ganci / First Light / age fotostock)">
+                        <div class="bgPreBoxInner" id="bgPreBoxIn1"><span class="bgPreBoxMask"></span><i
+                                class="iconfont iconCheck shouldNotFade">&#xe622;</i></div>
+                    </div>
+                    <div class="bgPreviewBox" id="bgPreBoxD2" onclick="changeWp(this)"
+                        title="瓦尔内明德的灯塔，德国梅克伦堡-前波美拉尼亚州罗斯托克市 (© Sandra Kreuzinger / Moment Open / Getty Images)">
+                        <div class="bgPreBoxInner" id="bgPreBoxIn2"><span class="bgPreBoxMask"></span><i
+                                class="iconfont iconCheck shouldNotFade">&#xe622;</i></div>
+                    </div>
+                    <div class="bgPreviewBox" id="bgPreBoxD3" onclick="changeWp(this)"
+                        title="孚日山脉的针叶林，法国 (© Radomir Jakubowski / Minden Pictures)">
+                        <div class="bgPreBoxInner" id="bgPreBoxIn3"><span class="bgPreBoxMask"></span><i
+                                class="iconfont iconCheck shouldNotFade">&#xe622;</i></div>
+                    </div>
+                    <div class="pTitleS">必应</div>
+                    <div class="bgPreviewBox" id="bgPreBoxBing" onclick="changeWp(this)">
+                        <div class="bgPreBoxInner" id="bgPreBoxInBing"><span class="bgPreBoxMask"></span><i
+                                class="iconfont iconCheck shouldNotFade">&#xe622;</i></div>
+                    </div>
+                    <div class="bgCusBoxR">
+                        <span class="titleBold">好康的壁纸，每日更新。</span>
+                        <div class="pTitleS" id="pWallpaperInfo"></div>
+                        <div class="pTitleS">图像来源：<a href="https://cn.bing.com/" class="links1"
+                                target="_blank">必应</a>&nbsp;&nbsp;<a
+                                href="http://bing.rthe.net/wallpaper?action=download" class="links1"
+                                target="_blank">点此下载</a></div>
+                    </div>
+                    <div class="pTitleS" id="bgTitleDynamic">动态</div>
+                    <div class="bgPreviewBox" id="bgPreBoxLive" onclick="changeWp(this)"
+                        title="Old bridge (© Arseniy Chebynkin / DerDenniis / Wallpaper Engine)">
+                        <div class="bgPreBoxInner" id="bgPreBoxInLive"><span class="bgPreBoxMask"></span><i
+                                class="iconfont iconCheck shouldNotFade">&#xe622;</i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="popUp" id="popAbout">
+                <span class="btnClose" onclick="closePop(popAbout)"><span class="btnCloseInner"></span></span>
+                <div class="aboutLogo"></div>
+                <div class="pContent centerAligned">
+                    <p id="pVersion">version</p>
+                    <p class="pAbout">这里是233的青柠起始页(〃'▽'〃)<br>特别感谢<a href="" class="links1"
+                            title="" target="_blank"></a>为起始页变得更好作出的诸多贡献<br>如果你喜欢这个主页，可以<a
+                            onclick="closePop(popAbout); setTimeout(() => showPop(popDonate), 400)"
+                            class="links1">捐助我</a>。Have a nice day!<br><br>
+                    </p>
+                    <div id="changeLog"></div>
+                </div>
+            </div>
+
+            <div class="popUp" id="popAccount">
+                <span class="btnClose" onclick="closePop(popAccount)"><span class="btnCloseInner"></span></span>
+                <div class="pTitle" id="titlePopAccount">欢迎你</div>
+                <div class="pContent" id="contentAccount">
+                    <div class="contentBlock" id="cBlockAccInfo">
+                        <div class="pTitleS">邮箱&emsp;&emsp;<span id="accInfoTextEmail">Email</span></div>
+                        <div class="pTitleS">UID&nbsp;&emsp;&emsp;<span id="accInfoTextUid">UID</span></div>
+                        <div class="pTitleS">用户名&emsp;<span id="accInfoTextUsername">Username</span><input type="text"
+                                name="username" class="inputEditUserInfo" id="inputEditUsername"
+                                onkeyup="checkUsername()"><i class="iconfont iconEdit" id="btnEditUsername" title="修改"
+                                onclick="editBtnClick('username')">&#xe60c;</i><span class="links1 btnUpdateUserInfo"
+                                id="btnUpdateUsername" onclick="updateUserInfo('username')">保存</span></div>
+                        <div class="pTitleS">生日&emsp;&emsp;<span id="accInfoTextBirthday">Birthday</span><input
+                                type="date" name="password" class="inputEditUserInfo" id="inputEditBirthday"><i
+                                class="iconfont iconEdit" id="btnEditBirthday" title="修改"
+                                onclick="editBtnClick('birthday')">&#xe60c;</i><span class="links1 btnUpdateUserInfo"
+                                id="btnUpdateBirthday" onclick="updateUserInfo('birthday')">保存</span></div>
+                    </div>
+                    <div class="contentBlock" id="cBlockAdvAcc">
+                        <span class="titleBold">进阶账号管理</span>
+                        <div class="pTitleS">修改登录邮箱及密码、管理您的已登录设备</div><br>
+                        <a href="" class="links1" title="进阶账号管理" target="_blank">点击前往</a>
+                    </div>
+                </div>
+                <div class="waveWrapper waveAnimation">
+                    <div class="waveWrapperInner bgTop">
+                        <div class="wave waveTop"></div>
+                    </div>
+                    <div class="waveWrapperInner bgMiddle">
+                        <div class="wave waveMiddle"></div>
+                    </div>
+                    <div class="waveWrapperInner bgBottom">
+                        <div class="wave waveBottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="popUp" id="popFeedback">
+                <span class="btnClose" onclick="closePop(popFeedback)"><span class="btnCloseInner"></span></span>
+                <div class="pTitle">反馈</div>
+                <div class="pContent" id="contentFeedback">
+                    <p class="pAbout">如需反馈问题、提供建议、或者与作者谈笑风生，请加入QQ群：<a class="links1" target="_blank"
+                            href=""></a><br>建议先阅读下面的常见问题解答喔
+                    </p>
+                    <div class="feedbackItem"><span class="titleBold">为什么按下回车无法搜索/同时打开两次搜索结果？</span>
+                        <div class="pTitleS">1. 可能是你安装的浏览器扩展冲突了，可以把扩展都关掉逐个排查； 2. 可能是你的浏览器没有开启“允许弹出窗口”权限，打开就行啦。</div>
+                    </div>
+                    <div class="feedbackItem"><span class="titleBold">为什么搜索栏会鬼畜/按下回车搜索打开的是空白页？</span>
+                        <div class="pTitleS">你的浏览器内核版本过低，建议换到最新版本的Chrome浏览器或Chromium内核的Edge浏览器就可以啦。</div>
+                    </div>
+                    <div class="feedbackItem"><span class="titleBold">界面的一些元素把其它元素挡住了点不到？</span>
+                        <div class="pTitleS">因为我还没有完全做好小窗口/手机屏幕的界面适配，我会尽快做好的。</div>
+                    </div>
+                    <div class="feedbackItem"><span class="titleBold">界面动画卡顿掉帧很严重？</span>
+                        <div class="pTitleS">可以在「常规设置」里开启「减弱动态效果」。我正在努力优化流畅度，未来会有改观的。</div>
+                    </div>
+                    <div class="feedbackItem"><span class="titleBold">每次重启浏览器都要重新登录账号啊？</span>
+                        <div class="pTitleS">可能是因为浏览器开启了“退出时清理浏览痕迹”或者没有允许起始页的Cookie权限，把权限打开就会自动登录啦。</div>
+                    </div>
+                    <div class="feedbackItem"><span class="titleBold">为什么无法把起始页设置成浏览器主页？</span>
+                        <div class="pTitleS">大概率是杀毒软件的锅。看看杀毒软件的设置里是不是把浏览器主页锁定成别的了？</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popUp" id="popDonate">
+                <span class="btnClose" onclick="closePop(popDonate)"><span class="btnCloseInner"></span></span>
+                <div class="pTitle">捐助我</div>
+                <div class="pContent" id="contentDonate">
+                    <p class="pAbout">我是一名在校大学生，每月高昂的服务器费用均由我从生活费中自费。<br>如果你喜欢我的网站，简单的捐赠是对我最大的物质和精神支持~爱你们！</p>
+                    <img class="imgQRC" id="imgAli"
+                        src="assets/images/AliPay_Full.jpg">
+                    <img class="imgQRC" id="imgWC"
+                        src="assets/images/WeChatPay_Full.jpg">
+                </div>
+            </div>
+            <div class="popUp" id="popWelcome">
+                <span class="btnClose" onclick="closePop(popWelcome)"><span class="btnCloseInner"></span></span>
+                <div class="pTitle centerAligned">焕然一新</div>
+                <div id="welcomeTip">起始页现在有了新的名字 - 青柠起始页</div>
+                <div class="updateListBox">
+                    <span class="updateListIcon"><i class="iconfont iconUpdateList">&#xeb93;</i></span>
+                    <span class="updateListTitle">你想要的强大便笺，现已准备就绪。</span>
+                    <span class="updateListDetail">完全云端同步 / 固定多条便笺 / 全面适配手机</span>
+                </div>
+                <div class="updateListBox">
+                    <span class="updateListIcon"><i class="iconfont iconUpdateList">&#xe866;</i></span>
+                    <span class="updateListTitle">深色主题，暗下来也悦目。</span>
+                    <span class="updateListDetail">起始页现将根据您操作系统的主题设置自动切换为精心设计的深色主题。可在常规设置中关闭。</span>
+                </div>
+                <div class="updateListBox">
+                    <span class="updateListIcon"><i class="iconfont iconUpdateList">&#xeb94;</i></span>
+                    <span class="updateListTitle">随心自定义。</span>
+                    <span class="updateListDetail">常规设置中现有更多设置项目可用，你可以根据自己的喜好定制起始页的行为。</span>
+                </div>
+                <button class="btnRectangle" onclick="closePop(popWelcome)">开始</button>
+            </div>
+        </div>
+        <div id="wip">
+            <div class="wipTip" style="margin-top: 300px;font-size: 50px;">马上就好</div>
+            <div class="wipTip" style="margin-top: 30px;font-size: small;color: rgba(255,255,255,0.5)">我们正在为青柠起始页添加新的功能
+            </div>
+            <div class="wipTip">稍后再回来看看吧</div>
+        </div>
+        <div id="tp-weather-widget"></div>
+    </div>
+    <div class="topNotificationBar" id="topNotificationBar">
+        <marquee id="marqueeBar"><span id="marqueeTitle"></span>&emsp;<span id="marqueeText"></span></marquee>
+        <span class="btnCloseS" id="btnClosetopNBar"></span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="js/waves.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

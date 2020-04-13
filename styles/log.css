@@ -1,0 +1,49 @@
+* {
+	scrollbar-color: rgba(0, 0, 0, 0.1) white;
+	scrollbar-width: thin;
+}
+
+body {
+	color: rgba(0, 0, 0, 0.8);
+	cursor: default;
+	font-family: "Microsoft Yahei Light", "Microsoft Yahei", PingFangSC-Regular, Helvetica, sans-serif, "等线";
+	font-size: 11px;
+	line-height: 18px;
+	margin: 10px 0 0;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.updateTag {
+	position: relative;
+	padding: 0 3px;
+	margin-left: 12px;
+	margin-right: 5px;
+	border-radius: 2px;
+	color: white;
+}
+
+.updateTag.new {
+	background-color: #A4BA80;
+}
+
+.updateTag.imp {
+	background-color: #A1C6C9;
+}
+
+.updateTag.fix {
+	background-color: #DBC693;
+}
